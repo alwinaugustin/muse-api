@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -51,6 +52,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        Log::info($exception->getMessage());
         $code  = $exception->getCode();
 
         if ($exception instanceof HttpException) {
