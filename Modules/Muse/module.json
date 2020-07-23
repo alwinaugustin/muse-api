@@ -1,0 +1,13 @@
+{
+    "name": "Muse",
+    "alias": "muse",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Muse\\Providers\\MuseServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
