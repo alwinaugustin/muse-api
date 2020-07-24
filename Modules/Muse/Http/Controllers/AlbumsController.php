@@ -2,6 +2,7 @@
 
 namespace Modules\Muse\Http\Controllers;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Modules\Muse\Entities\Album;
 use Illuminate\Routing\Controller;
@@ -70,7 +71,7 @@ class AlbumsController extends Controller
         $album = empty($albumID) ? new Album() : Album::find($albumID);
 
         $album->album_name      = $inputData['album_name'];
-        $album->release_date    = $inputData['release_date'];
+        $album->release_date    = Carbon::parse($inputData['release_date'])->toDate();
 
         $albumID = $album->save();
 
