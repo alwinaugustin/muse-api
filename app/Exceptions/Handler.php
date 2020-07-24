@@ -69,7 +69,7 @@ class Handler extends ExceptionHandler
         return response()->jsend(
             $response, 
             $exception->getMessage(),
-            $code
+            '500'
         );
     }
 }
